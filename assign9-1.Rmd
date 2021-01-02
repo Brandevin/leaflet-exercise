@@ -1,0 +1,23 @@
+Population distribution in US with leaflet
+
+=============
+Name: Brandevin
+Date:01/01/2021
+
+A plot with the 100 most populated cities in the us is made
+Data extracted from: https://simplemaps.com/data/us-cities
+
+```{r open_csv}
+library(dplyr)
+library(leaflet)
+
+data<-read.csv('uscities.csv',sep=',')[c('city','lat','lng','population')]
+
+top_pop<- data %>% top_n(100)
+label<- paste(paste('City: ',top_pop$city,' - Population:', as.character(format(as.numeric(top_pop$population),nsmall=0,big.mark=','))))
+top_pop %>%
+                leaflet() %>%
+                addTiles() %>%
+               addCircleMarkers(~lng,~lat,popup=~as.character(city),label=label,radius=sqrt(top_pop$population)/200)
+
+```
