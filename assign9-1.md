@@ -31,7 +31,17 @@ m<-top_pop %>%
 
 library(htmlwidgets)
 saveWidget(m, file="m.html")
-m
 ```
 
-![plot of chunk open_csv](figure/open_csv-1.png)
+
+```r
+knitr::include_url("m.html", height="1080px")
+```
+
+```
+## Could not load  file:///C:/Users/felip/AppData/Local/Temp/RtmpKi8bW2/file4ffc1f0f1a9e/m.html
+```
+
+```
+## Error in (function (url = NULL, file = "webshot.png", vwidth = 992, vheight = 744, : webshot.js returned failure value: 1
+```

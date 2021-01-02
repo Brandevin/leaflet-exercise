@@ -23,5 +23,9 @@ m<-top_pop %>%
 
 library(htmlwidgets)
 saveWidget(m, file="m.html")
-m
+
+```
+
+```{r, out.width="100%"}
+knitr::include_url("m.html", height="1080px")
 ```
